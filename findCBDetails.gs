@@ -18,6 +18,12 @@ function findCBOU(sernum) {
     if (chromebooklist[0].notes) {var note = chromebooklist[0].notes} else {var note = ""};
     if (chromebooklist[0].macAddress) {var macAddress = chromebooklist[0].macAddress} else {var macAddress = ""};
     if (chromebooklist[0].autoUpdateExpiration) {var autoUpdateExpiration = chromebooklist[0].autoUpdateExpiration} else {var autoUpdateExpiration = ""};
+    // Swedish SI date format of AUE, YYYY-MM-DD
+    // var aue = new Date(parseInt(autoUpdateExpiration)).toLocaleString("sv-SE", {  year: 'numeric', month: 'numeric', day: 'numeric' }) + " (" + autoUpdateExpiration + ")";
+    // Simple Swedish date format of AUE, showing only "month year"
+    // If you want US format replace .toLocaleString("en-US", {  year: 'numeric', month: 'short' }) 
+    var aue = new Date(parseInt(autoUpdateExpiration)).toLocaleString("sv-SE", {  year: 'numeric', month: 'short' }) + " (" + autoUpdateExpiration + ")";
+
     //        // This one does a double check, as one can be undefined while the other isn't, giving wrong result.
     if (chromebooklist[0].recentUsers && chromebooklist[0].recentUsers[0].email) {
       // var recentUser = chromebooklist[0].recentUsers[0].email} else {var recentUser = ""};
@@ -35,5 +41,6 @@ function findCBOU(sernum) {
   
   // return [serno, ou, recentUser, status, lastsync, osversion, asset, user, note, macAddress, autoUpdateExpiration];  
 // var lastsyncdate = lastsync.substring(0, 16).replace(/T/g, " ");
-  return [serial, ou, status, lastsync, osversion, asset, user, note, macAddress, autoUpdateExpiration, recentUser, recentUsers];  
+  // return [serial, ou, status, lastsync, osversion, asset, user, note, macAddress, autoUpdateExpiration, recentUser, recentUsers];
+  return [serial, ou, status, lastsync, osversion, asset, user, note, macAddress, aue, recentUser, recentUsers];  
 }
