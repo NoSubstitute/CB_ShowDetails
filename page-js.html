@@ -12,8 +12,6 @@
     document.getElementById('idCBOUautoUpdateExpiration').readOnly = true;
     document.getElementById('idCBRecent').readOnly = true;
     document.getElementById('idCBRecentUsers0').readOnly = true;
-    // document.getElementById('idCBRecentUsers3').readOnly = true;
-
 
     document.getElementById("btnserno").addEventListener("click",fetchCBOU);
     function fetchCBOU(){
@@ -39,20 +37,6 @@
         document.getElementById('idCBRecent').value = CBOU[10];
         
         console.log('Device info: ' + CBOU);
-        // console.log('Device info: ' + CBOU[0]);
-        // console.log('Device info: ' + CBOU[1]);
-        // console.log('Device info: ' + CBOU[2]);
-        // console.log('Device info: ' + CBOU[3]);
-        // console.log('Device info: ' + CBOU[4]);
-        // console.log('Device info: ' + CBOU[5]);
-        // console.log('Device info: ' + CBOU[6]);
-        // console.log('Device info: ' + CBOU[7]);
-        // console.log('Device info: ' + CBOU[8]);
-        // console.log('Device info: ' + CBOU[9]);
-        // console.log('Device info: ' + CBOU[10]);
-        
-        // console.log('CBOU11 is array ' + Array.isArray(CBOU[11]));
-        // console.log(CBOU[11]);
 
         var list0 = CBOU[11];
         console.log('list0 is array ' + Array.isArray(list0));
@@ -70,26 +54,5 @@
         var myTable0 = document.getElementById("idCBRecentUsers0");
         myTable0.insertAdjacentHTML("beforeend", html0);
         }
-
-        // var listarray = [CBOU[11]];
-        // console.log('listarray is array ' + Array.isArray(listarray));
-        // console.log(listarray);
-        // console.log(listarray[0].length);
-        // var i,innerArray;
-        // var L = listarray[0].length;
-        // for (i=0;i<L;i++) {
-        // innerArray = listarray[0][i];
-        // console.log(i);
-        // user3 = innerArray.email;
-        // console.log(user3);
-        // type3 = innerArray.type;
-        // console.log(type3);
-        // let html3='<style>td,th{border:0px solid black;}</style><table>';
-        // html3+='<tr><td>' + user3 + '</td></tr>';
-        // html3+='</table>';
-        // var myTable3 = document.getElementById("idCBRecentUsers3");
-        // myTable3.insertAdjacentHTML("beforeend", html3);
-        // }
-
     }
 </script>
