@@ -16,7 +16,7 @@
     document.getElementById("btnserno").addEventListener("click",fetchCBOU);
     function fetchCBOU(){
         var sernum = document.getElementById("serial").value;
-        console.log(sernum);
+        // console.log(sernum);
         google.script.run
         .withSuccessHandler(printCBOU)
         .findCBOU(sernum);
@@ -36,18 +36,18 @@
         document.getElementById('idCBOUautoUpdateExpiration').value = CBOU[9];
         document.getElementById('idCBRecent').value = CBOU[10];
         
-        console.log('Device info: ' + CBOU);
+        // console.log('Device info: ' + CBOU);
 
         var list0 = CBOU[11];
         console.log('list0 is array ' + Array.isArray(list0));
-        console.log(list0);
-        console.log(list0.length);
+        // console.log(list0);
+        // console.log(list0.length);
         for (i=0; i<list0.length; i++) {
-          console.log(i);
+          // console.log(i);
           var user0 = list0[i].email;
-          console.log(user0);
+          // console.log(user0);
           var type0 = list0[i].type;
-          console.log(type0);
+          // console.log(type0);
         let html0='<style>td,th{border:0px solid black;}</style><table>';
         html0+='<tr><td>' + user0 + '</td></tr>';
         html0+='</table>';
